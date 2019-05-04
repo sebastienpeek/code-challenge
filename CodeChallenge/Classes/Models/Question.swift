@@ -29,7 +29,10 @@ class Question: NSObject {
     
     internal init(with json: GenericDictionary) {
         
-        self.question = json["question"] as? String
+        if let questionString = json["question"] as? String, let decoded = questionString.htmlDecoded as? String {
+            self.question = decoded
+        }
+        
         self.category = json["category"] as? String
         
         if let difficulty = json["difficult"] as? String {
@@ -50,5 +53,16 @@ class Questions {
         for question:GenericDictionary in json {
             questions.append(Question(with: question))
         }
+    }
+}
+
+extension String {
+    var htmlDecoded: String {
+        let decoded = try? NSAttributedString(data: Data(utf8), options: [
+            .documentType: NSAttributedString.DocumentType.html,
+            .characterEncoding: String.Encoding.utf8.rawValue
+            ], documentAttributes: nil).string
+        
+        return decoded ?? self
     }
 }
