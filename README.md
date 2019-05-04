@@ -16,6 +16,24 @@ The MainViewController also handles pagination. If the user has answered the tot
 
 On an incorrect answer, the MainViewController will show a results view. This is using UserDefaults to save the highest score and display it, as well as there last games score. The user can then restart the game from here.
 
+#### RESTful Component
+
+Under `Modules -> API` you will find the overall arching `OTApiManager` which utilizes Alamofire to handle requests that are passed via managers.
+
+#### Managers
+
+I believe that managers for individual collections of actions that are handled should be specced out separately. This allows the testing of these components with ease.
+
+You will find a single manager in this project, the `QuestionManager` which has a single function (`get(with params: GenericDictionary, @escaping ApiManagerCompletionHandler)`) which utilizes a router to build up the request and then handles the success and error response.
+
+On success, this function is defensive in getting the data it is required, it then builds up an array of `Question` models and returns the success and array to the completion handler.
+
+#### Routers
+
+Routers are merely a way of having finite control over a single or multiple API requests. I lean to the favor that one router should be used for each manager. This keeps code clean and concise.
+
+The `QuestionRouter` is an `enum` that is a subclass of a `URLRequestConvertible` provided to us by Alamofire. Here we can set, depending on the case, the method and path required as well as any other components within the `asURLRequest()` function.
+
 ### Setup Local
 
 My implementation of this requires the use of CocoaPods to allow the utilization of Alamofire. CocoaPods should never be included in a repository as it creates overhead within the repository and will most often than not hurt the teams productivity due to conflicts.
