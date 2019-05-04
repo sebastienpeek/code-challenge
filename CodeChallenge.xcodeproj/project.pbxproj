@@ -11,12 +11,14 @@
 		BE0F3016227DF335008C13ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE0F3015227DF335008C13ED /* Assets.xcassets */; };
 		BE0F3019227DF335008C13ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE0F3017227DF335008C13ED /* LaunchScreen.storyboard */; };
 		BE0F3029227DF4AD008C13ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0F3022227DF4AD008C13ED /* AppDelegate.swift */; };
-		BE0F302A227DF4AD008C13ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0F3026227DF4AD008C13ED /* ViewController.swift */; };
+		BE0F302A227DF4AD008C13ED /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0F3026227DF4AD008C13ED /* MainViewController.swift */; };
 		BE0F302B227DF4AD008C13ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE0F3028227DF4AD008C13ED /* Main.storyboard */; };
 		BE0F302D227DF5A5008C13ED /* OTApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0F302C227DF5A5008C13ED /* OTApiManager.swift */; };
 		BE0F3031227DF73B008C13ED /* QuestionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0F3030227DF73B008C13ED /* QuestionManager.swift */; };
 		BE0F3033227DF743008C13ED /* QuestionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0F3032227DF743008C13ED /* QuestionRouter.swift */; };
 		BE0F3035227DF9B2008C13ED /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0F3034227DF9B2008C13ED /* Question.swift */; };
+		BE0F3037227DFD89008C13ED /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0F3036227DFD89008C13ED /* QuestionViewController.swift */; };
+		BE0F303A227E09F6008C13ED /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0F3039227E09F6008C13ED /* UIViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,12 +29,14 @@
 		BE0F3018227DF335008C13ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE0F301A227DF335008C13ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE0F3022227DF4AD008C13ED /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BE0F3026227DF4AD008C13ED /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BE0F3026227DF4AD008C13ED /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BE0F3028227DF4AD008C13ED /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		BE0F302C227DF5A5008C13ED /* OTApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTApiManager.swift; sourceTree = "<group>"; };
 		BE0F3030227DF73B008C13ED /* QuestionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionManager.swift; sourceTree = "<group>"; };
 		BE0F3032227DF743008C13ED /* QuestionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionRouter.swift; sourceTree = "<group>"; };
 		BE0F3034227DF9B2008C13ED /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		BE0F3036227DFD89008C13ED /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		BE0F3039227E09F6008C13ED /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		F8614AB55DE8AB4ED2D22DD4 /* Pods_CodeChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CodeChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -92,6 +96,7 @@
 			children = (
 				BE0F3022227DF4AD008C13ED /* AppDelegate.swift */,
 				BE0F3025227DF4AD008C13ED /* Controllers */,
+				BE0F3038227E09E4008C13ED /* Helpers */,
 				BE0F3021227DF4AD008C13ED /* Models */,
 				BE0F3023227DF4AD008C13ED /* Modules */,
 			);
@@ -127,7 +132,8 @@
 		BE0F3025227DF4AD008C13ED /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				BE0F3026227DF4AD008C13ED /* ViewController.swift */,
+				BE0F3026227DF4AD008C13ED /* MainViewController.swift */,
+				BE0F3036227DFD89008C13ED /* QuestionViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -154,6 +160,14 @@
 				BE0F3030227DF73B008C13ED /* QuestionManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		BE0F3038227E09E4008C13ED /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				BE0F3039227E09F6008C13ED /* UIViewExtension.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		F17CD327CB6C75F2D9D72693 /* Frameworks */ = {
@@ -284,11 +298,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE0F302A227DF4AD008C13ED /* ViewController.swift in Sources */,
+				BE0F302A227DF4AD008C13ED /* MainViewController.swift in Sources */,
 				BE0F3029227DF4AD008C13ED /* AppDelegate.swift in Sources */,
+				BE0F3037227DFD89008C13ED /* QuestionViewController.swift in Sources */,
 				BE0F302D227DF5A5008C13ED /* OTApiManager.swift in Sources */,
 				BE0F3035227DF9B2008C13ED /* Question.swift in Sources */,
 				BE0F3033227DF743008C13ED /* QuestionRouter.swift in Sources */,
+				BE0F303A227E09F6008C13ED /* UIViewExtension.swift in Sources */,
 				BE0F3031227DF73B008C13ED /* QuestionManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
