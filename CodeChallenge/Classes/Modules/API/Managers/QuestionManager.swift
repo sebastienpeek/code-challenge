@@ -21,7 +21,13 @@ class QuestionManager {
         OTApiManager.handleRequest(with: request) { (success, response) in
             if (success) {
                 if let json = response as? GenericDictionary {
-                    completion(success, json)
+                    guard let results = json["results"] as? [GenericDictionary] else {
+                        completion(false, response)
+                        return
+                    }
+                    
+                    let questions = Questions(with: results).questions
+                    completion(success, questions)
                 }
             } else {
                 completion(false, "Error")

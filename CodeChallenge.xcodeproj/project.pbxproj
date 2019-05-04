@@ -16,6 +16,7 @@
 		BE0F302D227DF5A5008C13ED /* OTApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0F302C227DF5A5008C13ED /* OTApiManager.swift */; };
 		BE0F3031227DF73B008C13ED /* QuestionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0F3030227DF73B008C13ED /* QuestionManager.swift */; };
 		BE0F3033227DF743008C13ED /* QuestionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0F3032227DF743008C13ED /* QuestionRouter.swift */; };
+		BE0F3035227DF9B2008C13ED /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0F3034227DF9B2008C13ED /* Question.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		BE0F302C227DF5A5008C13ED /* OTApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTApiManager.swift; sourceTree = "<group>"; };
 		BE0F3030227DF73B008C13ED /* QuestionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionManager.swift; sourceTree = "<group>"; };
 		BE0F3032227DF743008C13ED /* QuestionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionRouter.swift; sourceTree = "<group>"; };
+		BE0F3034227DF9B2008C13ED /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		F8614AB55DE8AB4ED2D22DD4 /* Pods_CodeChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CodeChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -99,6 +101,7 @@
 		BE0F3021227DF4AD008C13ED /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BE0F3034227DF9B2008C13ED /* Question.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				BE0F302A227DF4AD008C13ED /* ViewController.swift in Sources */,
 				BE0F3029227DF4AD008C13ED /* AppDelegate.swift in Sources */,
 				BE0F302D227DF5A5008C13ED /* OTApiManager.swift in Sources */,
+				BE0F3035227DF9B2008C13ED /* Question.swift in Sources */,
 				BE0F3033227DF743008C13ED /* QuestionRouter.swift in Sources */,
 				BE0F3031227DF73B008C13ED /* QuestionManager.swift in Sources */,
 			);
