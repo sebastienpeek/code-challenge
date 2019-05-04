@@ -448,8 +448,9 @@
 			baseConfigurationReference = 580278DCC4FCF3EB7D989038 /* Pods-CodeChallenge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3PN2TL8XHU;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CodeChallenge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -457,6 +458,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.luckyday.CodeChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -467,8 +469,9 @@
 			baseConfigurationReference = 0B21A1B0D98AD642920B94F5 /* Pods-CodeChallenge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3PN2TL8XHU;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CodeChallenge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -476,6 +479,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.luckyday.CodeChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
