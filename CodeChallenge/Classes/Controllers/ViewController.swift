@@ -13,6 +13,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        QuestionManager().get(with: ["amount": "10", "type": "boolean"]) { (success, response) in
+            print(response)
+        }
+        
     }
 
 

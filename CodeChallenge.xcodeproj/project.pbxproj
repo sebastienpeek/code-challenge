@@ -13,6 +13,9 @@
 		BE0F3029227DF4AD008C13ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0F3022227DF4AD008C13ED /* AppDelegate.swift */; };
 		BE0F302A227DF4AD008C13ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0F3026227DF4AD008C13ED /* ViewController.swift */; };
 		BE0F302B227DF4AD008C13ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE0F3028227DF4AD008C13ED /* Main.storyboard */; };
+		BE0F302D227DF5A5008C13ED /* OTApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0F302C227DF5A5008C13ED /* OTApiManager.swift */; };
+		BE0F3031227DF73B008C13ED /* QuestionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0F3030227DF73B008C13ED /* QuestionManager.swift */; };
+		BE0F3033227DF743008C13ED /* QuestionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0F3032227DF743008C13ED /* QuestionRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +28,9 @@
 		BE0F3022227DF4AD008C13ED /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE0F3026227DF4AD008C13ED /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BE0F3028227DF4AD008C13ED /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		BE0F302C227DF5A5008C13ED /* OTApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTApiManager.swift; sourceTree = "<group>"; };
+		BE0F3030227DF73B008C13ED /* QuestionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionManager.swift; sourceTree = "<group>"; };
+		BE0F3032227DF743008C13ED /* QuestionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionRouter.swift; sourceTree = "<group>"; };
 		F8614AB55DE8AB4ED2D22DD4 /* Pods_CodeChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CodeChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -108,6 +114,9 @@
 		BE0F3024227DF4AD008C13ED /* API */ = {
 			isa = PBXGroup;
 			children = (
+				BE0F302C227DF5A5008C13ED /* OTApiManager.swift */,
+				BE0F302F227DF6EA008C13ED /* Managers */,
+				BE0F302E227DF6EA008C13ED /* Routers */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -126,6 +135,22 @@
 				BE0F3028227DF4AD008C13ED /* Main.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		BE0F302E227DF6EA008C13ED /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				BE0F3032227DF743008C13ED /* QuestionRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		BE0F302F227DF6EA008C13ED /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				BE0F3030227DF73B008C13ED /* QuestionManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		F17CD327CB6C75F2D9D72693 /* Frameworks */ = {
@@ -258,6 +283,9 @@
 			files = (
 				BE0F302A227DF4AD008C13ED /* ViewController.swift in Sources */,
 				BE0F3029227DF4AD008C13ED /* AppDelegate.swift in Sources */,
+				BE0F302D227DF5A5008C13ED /* OTApiManager.swift in Sources */,
+				BE0F3033227DF743008C13ED /* QuestionRouter.swift in Sources */,
+				BE0F3031227DF73B008C13ED /* QuestionManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
