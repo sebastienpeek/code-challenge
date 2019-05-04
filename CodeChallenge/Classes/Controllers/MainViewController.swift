@@ -13,10 +13,13 @@ class MainViewController: UIViewController {
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var headerTitleLabel: UILabel!
     
-    @IBOutlet weak var emptyState: UIView!
-    
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var stackView: UIStackView!
+    
+    @IBOutlet weak var resultsView: UIView!
+    @IBOutlet weak var lastGameLabel: UILabel!
+    @IBOutlet weak var highScoreLabel: UILabel!
+    @IBOutlet weak var startButton: UIButton!
     
     var questions: [Question] = []
     var answeredCorrectly: [Question] = []
@@ -31,10 +34,20 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        startButton.layer.cornerRadius = 3
+        startButton.layer.borderWidth = 1
+        startButton.layer.borderColor = UIColor.black.cgColor
+        startButton.setTitleColor(.black, for: .normal)
+        
+        performAPIRequest()
+    }
+    
+    func performAPIRequest() {
+        
         let setupController: (() -> Void) = {
             
             if self.questions.count == 0 {
-                // show empty state
+                self.resultsView.isHidden = false
             } else {
                 let question = self.questions[self.position]
                 self.setupController(with: question)
@@ -60,9 +73,26 @@ class MainViewController: UIViewController {
         self.addArrangedSubview(with: controller)
         
         controller.delegate = self
-        controller.setupView(with: question)
+        controller.setupView(with: question, and: position + 1)
         
         position += 1
+    }
+    
+    @IBAction func startGameAgain() {
+        
+        resultsView.isHidden = true
+        
+        self.children.forEach { controller in
+            controller.view.removeFromSuperview()
+            controller.removeFromParent()
+        }
+        
+        position = 0
+        questions.removeAll()
+        answeredCorrectly.removeAll()
+        
+        performAPIRequest()
+        
     }
     
 }
@@ -91,6 +121,12 @@ extension MainViewController: QuestionDelegate {
         let moveToNextQuestion: (() -> Void) = {
             let question = self.questions[self.position]
             self.setupController(with: question)
+            
+            let currentX = self.scrollView.contentOffset.x
+            let newX = currentX + self.scrollView.frame.width
+            
+            self.scrollView.setContentOffset(CGPoint(x: newX, y: 0), animated: true)
+            
         }
         
         if self.position == self.questions.count - 1 {
@@ -113,6 +149,17 @@ extension MainViewController: QuestionDelegate {
     
     func answeredIncorrectly() {
         
+        var highestScore = UserDefaults.standard.integer(forKey: "highestScore")
+        
+        if highestScore < self.answeredCorrectly.count {
+            UserDefaults.standard.set(self.answeredCorrectly.count, forKey: "highestScore")
+            highestScore = self.answeredCorrectly.count
+        }
+        
+        self.lastGameLabel.text = "Answered Correctly: \(self.answeredCorrectly.count)"
+        self.highScoreLabel.text = "Highest Score: \(highestScore)"
+        
+        self.resultsView.isHidden = false
     }
     
 }
