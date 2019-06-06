@@ -22,6 +22,8 @@ class Question: NSObject {
     
     var answer: String?
     var type: String?
+    
+    var answeredCorrectly: Bool = false
 
     override init() {
         super.init()
@@ -29,8 +31,8 @@ class Question: NSObject {
     
     internal init(with json: GenericDictionary) {
         
-        if let questionString = json["question"] as? String, let decoded = questionString.htmlDecoded as? String {
-            self.question = decoded
+        if let questionString = json["question"] as? String {
+            self.question = questionString.htmlDecoded
         }
         
         self.category = json["category"] as? String
@@ -42,6 +44,16 @@ class Question: NSObject {
         self.answer = json["correct_answer"] as? String
         self.type = json["type"] as? String
         
+    }
+    
+}
+
+extension Question {
+    
+    func apply(_ answer: String) {
+        if self.answer == answer {
+            answeredCorrectly = true
+        }
     }
     
 }

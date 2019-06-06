@@ -58,12 +58,15 @@ class QuestionViewController: UIViewController {
         trueButton.isSelected = true
         trueButton.setBackgroundColor(.green)
         
-        if question.answer == "True" {
+        question.apply("True")
+        
+        if question.answeredCorrectly {
             delegate.answeredSuccessfully(for: question)
         } else {
             shakeView()
             delegate.answeredIncorrectly()
         }
+        
     }
     
     @IBAction func falseSelected() {
@@ -73,12 +76,15 @@ class QuestionViewController: UIViewController {
         falseButton.isSelected = true
         falseButton.setBackgroundColor(.red)
         
-        if question.answer == "False" {
+        question.apply("False")
+        
+        if question.answeredCorrectly {
             delegate.answeredSuccessfully(for: question)
         } else {
             shakeView()
             delegate.answeredIncorrectly()
         }
+        
     }
     
 }
